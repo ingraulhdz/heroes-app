@@ -6,7 +6,7 @@ export const authReducer = (state, action) => {
     case types.login:
       return {
         ...state,
-        loged: true,
+        logged: true,
         user: action.payload,
       };
 
@@ -16,6 +16,6 @@ export const authReducer = (state, action) => {
       };
 
     default:
-      break;
+      return state;
   }
 };

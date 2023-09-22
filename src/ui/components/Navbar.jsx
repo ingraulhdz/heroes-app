@@ -9,20 +9,13 @@ export const Navbar = () => {
 
     const {user, logout} = useContext(AuthContext);
 
-    const onLogin =()=>{
-navigate('/login', {
-    replace: true //clear all the previous history
-});
+    const onLogout = ()=>{ 
+         logout();
 
-    }
-
-
-    const onLogout = ()=>{
-      navigate('/marvel', {
+      navigate('/login', {
         replace: true //clear all the previous history
     });
     
-    logout();
     
     
     }
@@ -68,7 +61,6 @@ navigate('/login', {
         <ul className="navbar-nav ml-auto">
           <span className="nav-item nav-link text-primary">{user?.name}</span>
 
-          <button className="nav-item nav-link btn" onClick={onLogin}>Log in </button>
           <button className="nav-item nav-link btn" onClick={onLogout}>logout</button>
         </ul>
       </div>
