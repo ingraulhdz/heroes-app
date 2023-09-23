@@ -3,23 +3,19 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context";
 
 export const LoginPage = () => {
-
+  
   const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const onLogin = () => {
-  const lastpath = localStorage.getItem("lastPath") || '/'
+    const lastpath = localStorage.getItem("lastPath") || "/";
 
-           login("Raul Hernandez");
-
+    login("Raul Hernandez");
 
     navigate(lastpath, {
       replace: true,
-    }); 
-
-
-
+    });
   };
   return (
     <div className="container mt-5">
